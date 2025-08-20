@@ -203,3 +203,15 @@ window.addEventListener('scroll',() =>{
     };
 
     createEmailButton();
+
+
+//connect the form to excel sheet
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwGj4JDFQwvpMwGqZU-oayJ7AeyRgm-4Kb9yhy4WXKDovc6epxBkmlMLvCtTnxOOdEu/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Thanks for contacting us! We will get back to you soon.'))
+            .catch(error => console.error('Error!', error.message))
+    });

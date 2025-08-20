@@ -206,25 +206,12 @@ window.addEventListener('scroll',() =>{
 
 
 //connect the form to excel sheet
-//    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRrEO30DPS-a9YSTzwJTT1vXOoJvlXCJ8JcMe-Jf-HBAWEh1s6KNXxH6o4BwIH466f/exec'
-  //  const form = document.forms['google-sheet']
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRrEO30DPS-a9YSTzwJTT1vXOoJvlXCJ8JcMe-Jf-HBAWEh1s6KNXxH6o4BwIH466f/exec'
+    const form = document.forms['google-sheet']
 
-    //form.addEventListener('submit', e => {
-      //  e.preventDefault();
-        //fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          //  .then(response => alert('Thanks for contacting us! We will get back to you soon.'))
-            //.catch(error => console.error('Error!', error.message))
-   // });
-
-
-fetch('https://script.google.com/macros/s/AKfycbx8mwTu-vHtY40mYQT2KAxQiXnOd5Y8c-A_CsRGcO1o_h_eynYkZmT6JmS8YMWJI-UI/exec', {
-  method: 'POST',
-  body: JSON.stringify({
-    name: form.elements['name'].value,
-    email: form.elements['email'].value,
-    message: form.elements['message'].value
-  }),
-  headers: {
-    'Content-Type': 'application/json'
-  }
-}).then(res => res.text()).then(alert);
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Thanks for contacting us! We will get back to you soon.'))
+            .catch(error => console.error('Error!', error.message))
+    });

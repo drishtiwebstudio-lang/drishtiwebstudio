@@ -206,7 +206,7 @@ window.addEventListener('scroll',() =>{
 
 
 //connect the form to excel sheet
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwGj4JDFQwvpMwGqZU-oayJ7AeyRgm-4Kb9yhy4WXKDovc6epxBkmlMLvCtTnxOOdEu/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRrEO30DPS-a9YSTzwJTT1vXOoJvlXCJ8JcMe-Jf-HBAWEh1s6KNXxH6o4BwIH466f/exec'
     const form = document.forms['google-sheet']
 
     form.addEventListener('submit', e => {
